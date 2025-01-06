@@ -4,6 +4,7 @@ details: https://playwright.dev/docs/intro
 # Setup:
 * prerequisites such as Node.js 18+ are installed
 1. run cmd: ```npm init playwright@latest```
+1.1 if you want github to handle the CI/testing part make sure to set Github actions on ```true``` while setting it up
 2. 
 
 
