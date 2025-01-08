@@ -3,7 +3,7 @@
 
 export const baseURLs = {
   siteBackendURL: "https://the-internet.herokuapp.com",
-  siteB:          "https://siteB.example.com",
+  postmanEchoURL:  "https://postman-echo.com",
   siteC:          "https://siteC.example.com",
 };
 
@@ -13,7 +13,10 @@ export const paths = {
   responseMoved:       "/status_codes/301",
   responseNotFound:    "/status_codes/400",
   responseServerError: "/status_codes/500",
+  // postmanEchoURL
+  postmanEchoPost:     "/post",
+  postmanEchoPut:      "/put",
+  postmanEchoDelete:   "/delete"
 
-  // siteB (example future paths)
   // somePath: "/some/api/path",
 };
