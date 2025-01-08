@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { getURL } from "../../utils/urlBuilder";
 
-test("POST request with auth header validation - 200", async ({ request }) => {
+test("POST request with auth header and body example validation - 200", async ({ request }) => {
   // Define the API endpoint
   const apiEndpoint = getURL("postmanEchoURL", "postmanEchoPost");
   console.log(apiEndpoint)
