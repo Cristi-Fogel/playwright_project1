@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
 import { getURL } from "../../utils/urlBuilder";
 
-test("PUT request with auth header and body example validation - 200", async ({ request }) => {
+test("DELETE request with auth header and body example validation - 200", async ({ request }) => {
   // Define the API endpoint
-  const apiEndpoint = getURL("postmanEchoURL", "postmanEchoPut");
+  const apiEndpoint = getURL("postmanEchoURL", "postmanEchoDelete");
   console.log(apiEndpoint)
 
   // Define the request payload
@@ -15,8 +15,8 @@ test("PUT request with auth header and body example validation - 200", async ({ 
     // Authorization: `Bearer YOUR_ACCESS_TOKEN_HERE`, // Replace with your actual token
   };
 
-  // Make the PUT request with headers
-  const response = await request.put(apiEndpoint, {
+  // Make the POST request with headers
+  const response = await request.delete(apiEndpoint, {
     headers,
     data: payload,
   });
@@ -27,7 +27,7 @@ test("PUT request with auth header and body example validation - 200", async ({ 
   // Optionally, validate the response body
   const responseBody = await response.json();
   expect(responseBody).toHaveProperty("data");
-    //console.log(`Form Data: ${JSON.stringify(responseBody)}`);
+    console.log(`Form Data: ${JSON.stringify(responseBody)}`);
     expect(responseBody.data).toBe("\"blabla\""); //this server returns value in quotes so we double them for proper evaluation
   // Log the response for debugging
   console.log(`Response received: ${JSON.stringify(responseBody, null, 2)}`);
