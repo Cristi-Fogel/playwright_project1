@@ -2,17 +2,19 @@
 // can be set up for environment as well
 
 export const baseURLs = {
-  siteBackendURL: "https://the-internet.herokuapp.com",
-  postmanEchoURL:  "https://postman-echo.com",
-  siteC:          "https://siteC.example.com",
+  siteBackendURL:      "https://the-internet.herokuapp.com",
+  herokuURL:           "https://the-internet.herokuapp.com", 
+  postmanEchoURL:      "https://postman-echo.com",
+  siteC:               "https://siteC.example.com",
 };
 
 export const paths = {
-  // siteBackendURL
+  // heroku backend + login pathing
   responseOK:          "/status_codes/200",
   responseMoved:       "/status_codes/301",
   responseNotFound:    "/status_codes/400",
   responseServerError: "/status_codes/500",
+  loginPageHeroku:     "/login",
   // postmanEchoURL
   postmanEchoPost:     "/post",
   postmanEchoPut:      "/put",

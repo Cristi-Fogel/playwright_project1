@@ -4,7 +4,7 @@ import { getURL } from "../../utils/urlBuilder";
 test("DELETE request with auth header and body example validation - 200", async ({ request }) => {
   // Define the API endpoint
   const apiEndpoint = getURL("postmanEchoURL", "postmanEchoDelete");
-  console.log(apiEndpoint)
+  // console.log(apiEndpoint)
 
   // Define the request payload
   const payload =  "blabla";
@@ -27,8 +27,8 @@ test("DELETE request with auth header and body example validation - 200", async 
   // Optionally, validate the response body
   const responseBody = await response.json();
   expect(responseBody).toHaveProperty("data");
-    console.log(`Form Data: ${JSON.stringify(responseBody)}`);
+    // console.log(`Form Data: ${JSON.stringify(responseBody)}`);
     expect(responseBody.data).toBe("\"blabla\""); //this server returns value in quotes so we double them for proper evaluation
   // Log the response for debugging
-  console.log(`Response received: ${JSON.stringify(responseBody, null, 2)}`);
+  // console.log(`Response received: ${JSON.stringify(responseBody, null, 2)}`);
 });

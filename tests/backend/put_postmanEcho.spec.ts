@@ -30,5 +30,5 @@ test("PUT request with auth header and body example validation - 200", async ({ 
     //console.log(`Form Data: ${JSON.stringify(responseBody)}`);
     expect(responseBody.data).toBe("\"blabla\""); //this server returns value in quotes so we double them for proper evaluation
   // Log the response for debugging
-  console.log(`Response received: ${JSON.stringify(responseBody, null, 2)}`);
+  // console.log(`Response received: ${JSON.stringify(responseBody, null, 2)}`);
 });
