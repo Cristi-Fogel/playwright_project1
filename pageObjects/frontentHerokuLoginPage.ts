@@ -7,13 +7,16 @@ export class FrontendHerokuLoginPage{
     passwordInput:  Locator;
     loginButton:    Locator;
     errorMessage:   Locator;
+    logoutButton:   Locator;
+    loginMessageOk: Locator;
 
     constructor(page: Page){
         this.page = page;
-        this.usernameInput = page.locator('#username');
-        this.passwordInput = page.locator('#password');
-        this.loginButton   = page.locator('button.radius:has-text("Login")');
-        this.errorMessage  = page.locator('flash-messages');
+        this.usernameInput  = page.locator('#username');
+        this.passwordInput  = page.locator('#password');
+        this.loginButton    = page.locator('button.radius:has-text("Login")');
+        this.errorMessage   = page.locator('flash-messages');
+        this.loginMessageOk = page.locator('h4.subheader');
     }
 
     async navigate(url:string) {
