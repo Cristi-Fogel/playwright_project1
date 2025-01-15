@@ -25,3 +25,21 @@ test('frontend Heroku - Login test', async ({page})=>{
   await expect(loginMessage).toBe(validationStrings.login.successMessage);
 });
 
+
+test('frontend Heroku - Logout test', async ({page})=>{
+  const loginPage = new FrontendHerokuLoginPage(page);
+  const landingPage = new FrontentHerokuLandingPage(page);
+  //can export login logic to a separate file to make it modular; for this will keep as-is
+
+  await loginPage.navigate(getURL("herokuURL", "loginPageHeroku"));
+  await loginPage.login(credentials.users.admin.username, credentials.users.admin.password);
+  
+  await landingPage.logoutButton.click();
+  
+  const logoutMessage = await loginPage.getLogoutSuccessMessage(); // Fetch login message and store it in variable to have access to it
+  // console.log("Login Message:", loginMessage);
+
+  await expect(logoutMessage).toContain(validationStrings.logout.successMesage);
+});
+
+
