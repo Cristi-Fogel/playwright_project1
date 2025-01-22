@@ -2,7 +2,7 @@ import {test, expect, Locator, Page} from '@playwright/test';
 
 
 export class FrontendHerokuLoginPage{
-    page: Page;
+    page:           Page;
     usernameInput:  Locator;
     passwordInput:  Locator;
     loginButton:    Locator;
