@@ -48,9 +48,6 @@ playwright direct details: https://playwright.dev/docs/intro
 - backend/frontend folders will be used for corresponding test types
 - playwright-report/test-results offer report and results(duh)
 
-
-
 # TODO:
 1. update config file with multiple variants 
-2. cucumber it 
-3. add extra functionality for utils folder
+2. add extra functionality for utils folder
