@@ -1,5 +1,4 @@
-import {test, expect, Locator, Page} from '@playwright/test';
-
+import {Locator, Page} from '@playwright/test';
 
 export class FrontendHerokuLoginPage{
     page:           Page;
@@ -19,16 +18,13 @@ export class FrontendHerokuLoginPage{
         this.logoutMessage  = page.locator('div.flash.success');
         this.loginMessageOk = page.locator('h4.subheader');
     }
-
-    async navigate(url:string) {
-        await this.page.goto(url);
-    }
     
     async login(username: string, password: string) {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         await this.loginButton.click();
     }
+
     async getErrorMessage(): Promise<string> {
         return (await this.errorMessage.textContent()) ?? '';
     }

@@ -5,15 +5,15 @@ export const credentials = {
         password: "SuperSecretPassword!",
       },
       invalidUser: {
-        username: "regular_user",
-        password: "regular_pass123",
+        username:  "regular_user",
+        password:  "regular_pass123",
       },
     },
     apiKeys: {
-      serviceA: "API_KEY_FOR_SERVICE_A",
-      serviceB: "API_KEY_FOR_SERVICE_B",
+      serviceA:    "API_KEY_FOR_SERVICE_A",
+      serviceB:    "API_KEY_FOR_SERVICE_B",
     },
     tokens: {
-      authToken: "AUTH_TOKEN_EXAMPLE",
+      authToken:   "AUTH_TOKEN_EXAMPLE",
     },
   };

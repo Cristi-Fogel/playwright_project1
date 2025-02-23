@@ -1,5 +1,4 @@
-import {test, expect, Locator, Page} from '@playwright/test';
-
+import {Locator, Page} from '@playwright/test';
 
 export class FrontentHerokuLandingPage{
     page:           Page;
@@ -10,10 +9,6 @@ export class FrontentHerokuLandingPage{
         this.page = page;
         this.loginMessageOk = page.locator('h4.subheader');
         this.logoutButton   = page.locator('a[href="/logout"]');
-    }
-
-    async navigate(url:string) {
-        await this.page.goto(url);
     }
     
     async getLoginMessage(): Promise<string> {
