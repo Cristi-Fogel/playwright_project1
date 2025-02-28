@@ -20,6 +20,7 @@ playwright direct details: https://playwright.dev/docs/intro
     - remember async/await for frontend tests
     - remember to structure body/header for backend tests
     - make use of enough assertions 
+    - make use of the pageUtils helper functions (ex: waitUntil visible/enabled/disabled)
 6. run test(s)
     - explicit test: npx playwright test -g "frontend Heroku - Logout test"
     - all tests: npx playwrigh test
