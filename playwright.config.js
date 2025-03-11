@@ -26,6 +26,7 @@ module.exports = defineConfig({
     // // on - detail report for each step
     // // on-first-retry - default
     trace: 'off',
+    // creates a trace file for each test, within test-results folder 
   },
 
   /* Configure projects for major browsers */
