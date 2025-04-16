@@ -16,16 +16,24 @@ export async function waitForElementToDisappear(page: Page, locator: Locator, ti
 }
 
 export async function waitTilEnabled(page: Page, locator: Locator, timeout = 5000) {
+    const elementHandle = await locator.elementHandle();
+    if (!elementHandle) {
+        throw new Error('Element handle is null. Cannot wait for enabled state.');
+    }
     await page.waitForFunction(
         (element) => element !== null && element.hasAttribute('enabled'),
-        await locator.elementHandle(),{ timeout }
+        elementHandle, { timeout }
     );
 }
 
 export async function waitTilDisabled(page: Page, locator: Locator, timeout = 5000) {
+    const elementHandle = await locator.elementHandle();
+    if (!elementHandle) {
+        throw new Error('Element handle is null. Cannot wait for disabled state.');
+    }
     await page.waitForFunction(
         (element) => element !== null && element.hasAttribute('disabled'),
-        await locator.elementHandle(),{ timeout }
+        elementHandle, { timeout }
     );
 }
 

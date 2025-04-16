@@ -1,19 +1,19 @@
 export const credentials = {
     users: {
       admin: {
-        username: "tomsmith",
-        password: "SuperSecretPassword!",
+        username: process.env.ADMIN_USERNAME || "tomsmith", // Default to "tomsmith"
+        password: process.env.ADMIN_PASSWORD || "SuperSecretPassword!", // Default to "SuperSecretPassword!"
       },
-      invalidUser: {
-        username:  "regular_user",
-        password:  "regular_pass123",
+      invalidUser: {  
+        username: process.env.INVALID_USERNAME || "regular_user",
+        password: process.env.INVALID_PASSWORD || "regular_pass123",
       },
     },
     apiKeys: {
-      serviceA:    "API_KEY_FOR_SERVICE_A",
-      serviceB:    "API_KEY_FOR_SERVICE_B",
+      serviceA: process.env.SERVICE_A_API_KEY || "defaultServiceAKey",
+      serviceB: process.env.SERVICE_B_API_KEY || "defaultServiceBKey",
     },
     tokens: {
-      authToken:   "AUTH_TOKEN_EXAMPLE",
+      authToken: process.env.AUTH_TOKEN || "defaultAuthToken",
     },
-  };
+};

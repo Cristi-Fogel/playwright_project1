@@ -31,7 +31,11 @@ export class FrontendHerokuLoginPage{
     }
 
     async getErrorMessage(): Promise<string> {
-        return (await this.errorMessage.textContent()) ?? '';
+        const text = await this.errorMessage.textContent();
+        if (!text) {
+            throw new Error('Error message is null or empty.');
+        }
+        return text;
     }
     
     async getLogoutSuccessMessage(): Promise<string>{

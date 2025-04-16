@@ -8,5 +8,11 @@ import { baseURLs, paths } from "../config";
  */
 
 export function getURL(site: keyof typeof baseURLs, path: keyof typeof paths): string {
+  if (!baseURLs[site]) {
+    throw new Error(`Invalid site key: ${site}`);
+  }
+  if (!paths[path]) {
+    throw new Error(`Invalid path key: ${path}`);
+  }
   return `${baseURLs[site]}${paths[path]}`;
 }
