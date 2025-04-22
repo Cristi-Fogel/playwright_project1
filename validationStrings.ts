@@ -5,7 +5,7 @@ export const validationStrings = {
       successMessage: "Welcome to the Secure Area. When you are done click logout below.",
     },
     logout: {
-      successMesage: "You logged out of the secure area!",
+      successMessage: "You logged out of the secure area!",
     },
     general: {
       pageNotFound: "Page not found.",

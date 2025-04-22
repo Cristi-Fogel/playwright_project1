@@ -25,11 +25,12 @@ export class FrontendHerokuLoginPage{
             await this.passwordInput.fill(password);
             await this.loginButton.click();
         } catch (error) {
-            console.error('Error during login:', error);
+            console.error(`Error during login for ${username}:`, error);
             throw error;
         }
     }
 
+    // these are positive error messages (validation strings not unexpected errors)
     async getErrorMessage(): Promise<string> {
         const text = await this.errorMessage.textContent();
         if (!text) {

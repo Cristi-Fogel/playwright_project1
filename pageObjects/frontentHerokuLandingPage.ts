@@ -12,6 +12,25 @@ export class FrontentHerokuLandingPage{
     }
     
     async getLoginMessage(): Promise<string> {
-        return (await this.loginMessageOk.textContent()) ?? '';
+        try {
+          const text = await this.loginMessageOk.textContent();
+          if (!text) {
+            throw new Error("Login message element found, but textContent is null or empty.");
+          }
+          return text;
+        } catch (error) {
+          console.error("Error while retrieving login success message:", error);
+          throw error;
+        }
     }
+
+    async clickLogout(): Promise<void> {
+        try {
+          await this.logoutButton.click();
+        } catch (error) {
+          console.error("Error while trying to click the logout button:", error);
+          throw error;
+        }
+      }
+    
 }
