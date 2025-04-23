@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test';
+import { getURL } from './urlBuilder';
 
 // used primarily for frontend tests
 export async function navigateTo(page: Page, url: string) {
@@ -77,3 +78,9 @@ export async function takeScreenshot(page: Page, path: string, locator?: Locator
     }
 }
 
+export async function resetBrowserState(page: Page) {
+    await page.context().clearCookies();
+    await page.goto(getURL("herokuURL", "loginPageHeroku"));
+    await page.evaluate(() => localStorage.clear());
+    await page.evaluate(() => sessionStorage.clear());
+  }

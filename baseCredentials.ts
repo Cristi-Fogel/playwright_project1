@@ -1,3 +1,4 @@
+// for storing credentials and API keys
 export const credentials = {
     users: {
       admin: {

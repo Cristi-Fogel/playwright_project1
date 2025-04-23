@@ -1,3 +1,4 @@
+// storing just validation strings for the application
 export const validationStrings = {
     login: {
       invalidUsername: "Your username is invalid!",
