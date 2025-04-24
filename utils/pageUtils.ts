@@ -78,6 +78,7 @@ export async function takeScreenshot(page: Page, path: string, locator?: Locator
     }
 }
 
+//using main login page for resetting, as it shouldn't have any data stored at this point
 export async function resetBrowserState(page: Page) {
     await page.context().clearCookies();
     await page.goto(getURL("herokuURL", "loginPageHeroku"));

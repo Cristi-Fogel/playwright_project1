@@ -1,4 +1,4 @@
-import { baseURLs, paths } from "../config";
+import { baseURLs, paths } from "../routeConfig";
 
 /**
  * Constructs the full URL for a given base and path.
