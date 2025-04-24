@@ -19,7 +19,7 @@ export class FrontentHerokuLandingPage{
           }
           return text;
         } catch (error) {
-          console.error("Error while retrieving login success message:", error);
+          console.error(`Error while retrieving login success message:  ${error.message}`);
           throw error;
         }
     }
