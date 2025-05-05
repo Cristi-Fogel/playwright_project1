@@ -1,4 +1,5 @@
 import {Locator, Page} from '@playwright/test';
+import { credentials } from '../baseCredentials';
 
 export class FrontendHerokuLoginPage{
     page:           Page;
@@ -26,6 +27,21 @@ export class FrontendHerokuLoginPage{
             await this.loginButton.click();
         } catch (error) {
             console.error(`Error during login for ${username}:`, error);
+            throw error;
+        }
+    }
+
+    async loginAs(userAlias: keyof typeof credentials.users) {
+        try {
+            const user = credentials.users[userAlias];
+            if (!user) {
+                throw new Error(`User type ${userAlias} not found in credentials.`);
+            }
+            await this.usernameInput.fill(user.username);
+            await this.passwordInput.fill(user.password);
+            await this.loginButton.click();
+        } catch (error) {
+            console.error(`Error during login for user type ${userAlias}:`, error);
             throw error;
         }
     }

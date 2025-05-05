@@ -33,7 +33,7 @@ test('frontend Heroku - Logout test', async ({ page }) => {
   const landingPage = new FrontentHerokuLandingPage(page);
 
   // await navigateTo(page, getURL("herokuURL", "loginPageHeroku"));
-  await loginPage.login(credentials.users.admin.username, credentials.users.admin.password);
+  await loginPage.loginAs("admin");
   await landingPage.clickLogout();
   // Wait for the logout message to appear
   const logoutMessage = await loginPage.getLogoutSuccessMessage();
