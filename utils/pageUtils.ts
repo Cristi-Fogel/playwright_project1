@@ -1,20 +1,34 @@
 import { Page, Locator } from '@playwright/test';
 import { getURL } from './urlBuilder';
 
-// used primarily for frontend tests
+// used for frontend tests
 export async function navigateTo(page: Page, url: string) {
-    await page.goto(url);
+    try {
+        await page.goto(url);
+    } catch (error) {
+        throw new Error(`Failed to navigate to ${url}: ${error.message}`);
+    }
 }
 
 //implicit timeout is 30 seconds, but we can override it setting the timeout parameter with a different value
 export async function waitForElement(page: Page, locator: Locator, timeout = 5000) {
-    await locator.waitFor({ state: 'visible', timeout });
+    try{
+        await locator.waitFor({ state: 'visible', timeout });
+    }
+    catch (error) {
+        throw new Error(`Error waiting for element: ${locator}. Error: ${error.message}`);
+    }
 }
 
 // deviations from 0project
 export async function waitForElementToDisappear(page: Page, locator: Locator, timeout = 5000) {
-    await locator.waitFor({ state: 'hidden', timeout });
+    try {
+        await locator.waitFor({ state: 'hidden', timeout });
+    } catch (error) {
+        throw new Error(`Error waiting for element to disappear: ${locator}. Error: ${error.message}`);
+    }
 }
+
 
 export async function waitTilEnabled(page: Page, locator: Locator, timeout = 5000) {
     const elementHandle = await locator.elementHandle();

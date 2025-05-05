@@ -35,7 +35,7 @@ export class FrontendHerokuLoginPage{
         try {
             const user = credentials.users[userAlias];
             if (!user) {
-                throw new Error(`User type ${userAlias} not found in credentials.`);
+                throw new Error(`User details for ${userAlias} not found in credentials.`);
             }
             await this.usernameInput.fill(user.username);
             await this.passwordInput.fill(user.password);
