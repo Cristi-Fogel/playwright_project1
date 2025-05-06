@@ -2,7 +2,6 @@ import { test, expect } from "@playwright/test";
 import { getURL } from "../../utils/urlBuilder";
 import { fetchData } from "../../utils/apiUtils"; // adjust path as needed
 
-
 test("GET request with auth header and body example validation - 200", async () => {
   const apiEndpoint = getURL("siteBackendURL", "responseOK");
 
@@ -16,7 +15,6 @@ test("GET request with auth header and body example validation - 200", async () 
   expect(status).toBe(200);
   expect(data).toBeDefined();
 });
-
 
 test("POST request with auth header and body example validation - 200", async () => {
   const apiEndpoint = getURL("postmanEchoURL", "postmanEchoPost");
@@ -43,7 +41,6 @@ test("POST request with auth header and body example validation - 200", async ()
   expect(responseData).toHaveProperty("body", "bar");
   expect(responseData).toHaveProperty("userId", 1);
 });
-
 
 test("PUT request with auth header and body example validation - 200", async () => {
   const apiEndpoint = getURL("postmanEchoURL", "postmanEchoPut");
