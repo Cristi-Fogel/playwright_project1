@@ -29,7 +29,6 @@ export async function waitForElementToDisappear(page: Page, locator: Locator, ti
     }
 }
 
-
 export async function waitTilEnabled(page: Page, locator: Locator, timeout = 5000) {
     const elementHandle = await locator.elementHandle();
     if (!elementHandle) {
